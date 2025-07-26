@@ -89,11 +89,11 @@ This project demonstrates a simple yet effective pipeline for **blending an obje
 | Color Balanced Object | 🎨 Adjusted for background lighting |
 | Final Composite       | 🌌 Object blended into `source.jpg` |
 
----
+
 | Description            | Image |
 |------------------------|-------|
 | 🔁 Target and Source   | ![](./TargetandSource.jpg) |
-| 🌌 Final Composite     | ![](./FinalComposite.jpg) |
+| 🌌 Final Composite     | ![](./Final%20Composite.jpg) |
 
 ---
 ## ✍️ Author

@@ -1,77 +1,104 @@
-📷 Image Blending using Color Balance and Alpha Masking
-This project demonstrates a simple yet effective pipeline for blending an object image into a background scene using:
 
-HSV-based alpha mask extraction
+# 📷 Image Blending using Color Balance and Alpha Masking
 
-Radial Basis Function (RBF) based color balancing in LAB color space
+This project demonstrates a simple yet effective pipeline for **blending an object image into a background scene** using:
 
-Alpha blending for seamless integration
+- 🎯 HSV-based alpha mask extraction
+- 🎨 Radial Basis Function (RBF) based color balancing in LAB color space
+- ✨ Alpha blending for seamless integration
 
-🔧 Features
-🖼️ Object extraction using HSV thresholding (to separate object from white background)
+---
 
-🎨 Color matching between source and target images using RBF interpolation in LAB color space
+## 🔧 Features
 
-🧠 RANSAC-based outlier rejection to improve control point robustness
+- 🖼️ **Object extraction** using HSV thresholding (to separate object from white background)
+- 🧪 **Color matching** using RBF interpolation in LAB color space
+- 🧠 **RANSAC-based outlier rejection** for robust control point filtering
+- 🌈 **Smooth and realistic blending** using alpha compositing
 
-🔀 Smooth and realistic blending using alpha compositing
+---
 
-🛠️ Files
-blend_object_into_scene.m: Main script to run the full pipeline: loading images, generating alpha mask, color balancing, and blending.
+## 📁 File Overview
 
-color_balance_rbf.m: Core function that uses RBF interpolation with RANSAC filtering to adjust colors for better realism.
+| File                  | Description |
+|-----------------------|-------------|
+| `blend_object_into_scene.m` | Main script to run the complete blending pipeline |
+| `color_balance_rbf.m`       | RBF-based color balancing with RANSAC support |
+| `phone4.jpg`                | Object image to blend (e.g., phone on white background) |
+| `source.jpg`                | Background scene image |
 
-phone4.jpg: The object image to be blended (e.g., a mobile phone on white background).
+---
 
-source.jpg: The target scene image into which the object is blended.
+## 🚀 How It Works
 
-📌 How It Works
-Masking: Converts the object image to HSV and extracts the non-white object as a binary alpha mask.
+1. **Masking**  
+   Converts the object image to HSV color space and extracts a binary alpha mask to isolate the object from a white background.
 
-Control Points: You define 3+ corresponding points in the object and background image.
+2. **Control Points**  
+   You define 3+ corresponding control points between the object and background images.
 
-Color Transfer: Uses those points to guide color correction using an RBF model in LAB color space.
+3. **Color Transfer**  
+   Uses Radial Basis Function (RBF) interpolation in LAB space to match the object's color profile to the background, using RANSAC to reject outliers.
 
-Blending: Alpha values are used to softly blend the corrected object into the target scene.
+4. **Alpha Blending**  
+   Blends the object into the background using the alpha mask for soft transitions.
 
-▶️ How to Run
-Place your images in the project folder:
+---
 
-Replace phone4.jpg with your object image
+## ▶️ Running the Code
 
-Replace source.jpg with your target background
+1. Ensure your images are placed in the same directory:
+   - Replace `phone4.jpg` with your object image.
+   - Replace `source.jpg` with your background scene.
 
-In MATLAB, run:
+2. Open MATLAB and run:
+   ```matlab
+   blend_object_into_scene
+   ```
 
-matlab
-Copy
-Edit
-blend_object_into_scene
-The script will display:
+3. The script will show:
+   - The original object
+   - The alpha mask
+   - The color-balanced object
+   - The final composite image
 
-The original object
+---
 
-The extracted alpha mask
+## 🧠 Use Cases
 
-The color-adjusted object
+- Product placement in marketing designs
+- AR content generation and virtual try-ons
+- Educational image processing demos
+- Custom collages and graphics design
 
-The final composite
+---
 
-💡 Example Use Cases
-Virtual try-on (furniture, decor, phones)
+## 📦 Requirements
 
-AR mockups
+- MATLAB R2020 or newer (recommended)
+- Image Processing Toolbox
 
-Product placement in ads
+---
 
-Educational image processing demos
+## 📸 Example Output
 
-📁 Dependencies
-MATLAB with Image Processing Toolbox
+| Step                  | Image |
+|-----------------------|-------|
+| Original Object       | 🖼️ `phone4.jpg` |
+| Extracted Alpha Mask  | 🔲 Binary mask of the object |
+| Color Balanced Object | 🎨 Adjusted for background lighting |
+| Final Composite       | 🌌 Object blended into `source.jpg` |
 
-🧠 Credits
-Color balancing inspired by RBF interpolation techniques in computer vision
+---
 
-LAB color space for perceptually uniform color adjustments
+## ✍️ Author
 
-Simple RANSAC-based outlier rejection for robustness
+**Naveen Kumaran**  
+B.Tech ECE, NIT Warangal  
+Feel free to fork or contribute!
+
+---
+
+## 📜 License
+
+This project is open-source and available under the MIT License.

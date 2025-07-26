@@ -90,7 +90,12 @@ This project demonstrates a simple yet effective pipeline for **blending an obje
 | Final Composite       | 🌌 Object blended into `source.jpg` |
 
 ---
+| Description            | Image |
+|------------------------|-------|
+| 🔁 Target and Source   | ![](./TargetandSource.jpg) |
+| 🌌 Final Composite     | ![](./FinalComposite.jpg) |
 
+---
 ## ✍️ Author
 
 **Naveen Kumaran**  
